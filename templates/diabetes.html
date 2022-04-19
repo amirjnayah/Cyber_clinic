@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Diabetes form</title>
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link rel= "stylesheet" type= "text/css" href= "static/styles/style.css">
+    
+</head>
+<!-- Vendor CSS Files -->
+    <link rel= "stylesheet" type= "text/css" href= "static/vendor/fontawesome-free/css/all.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "static/vendor/animate.css/animate.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "static/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "static/vendor/bootstrap-icons/bootstrap-icons.css" >
+    <link rel= "stylesheet" type= "text/css" href= "static/vendor/boxicons/css/boxicons.min.css" >
+    <link rel= "stylesheet" type= "text/css" href= "static/vendor/glightbox/css/glightbox.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "static/vendor/remixicon/remixicon.css" >
+    <link rel= "stylesheet" type= "text/css" href= "static/vendor/swiper/swiper-bundle.min.css">
+<body>
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:cyberclinic@gmail.com">cyberclinic@gmail.com</a>
+        <i class="bi bi-phone"></i> +216 23 280 514
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="index.html">Cyber Clinic</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="/">Home</a></li>
+        <li><a class="nav-link scrollto" href="#about">About</a></li>
+        <li><a class="nav-link scrollto" href="#services">Services</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+ <!-- ======= Appointment Section ======= -->
+ <section id="appointment" class="appointment section-bg">
+  <div class="container">
+<br><br><br><br>
+    <div class="section-title">
+      <h2>Diabetes check</h2>
+      <p>Fill in the fields under with the mandatory data ,It's important to answer the questions precisely to get more accurate result ,then click the Check Results button .</p>
+    </div>
+
+    <form action="{{url_for('predict')}}" method="post" role="form" class="php-email-form">
+      <div class="row">
+        <div class="col-md-4 form-group">
+          <input type="number" min="60" max="220" name="height" class="form-control" id="height" required placeholder="Your Height in centimeters" >
+          <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+          <input type="number" min="30" max="200" class="form-control" name="weight" id="weight" required placeholder="Your Weight in Kilogrames">
+          <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+          <select name="HighBP" id="HighBP" class="form-select">
+            <option value="">Do you have high blood pressure</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>          <div class="validate"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 form-group mt-3"> 
+          <select name="Wdiff" id="Wdiff" class="form-select">
+            <option value="">Do you have high walk difficulties</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+        <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3">
+          <select name="HighC" id="HighC" class="form-select">
+            <option value="">Do you have high colesterol level</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+          <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3">
+          <input type="number" min="1" max="10" name="Ghealth" class="form-control" id="Ghealth" required placeholder="Rate your general health on 10" >
+          <div class="validate"></div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+      </div>
+      <div class="text-center"><button type="submit">Check Results</button></div>
+    </form>
+
+  </div>
+</section><!-- End Appointment Section -->
+    
+</body>
+</html>
