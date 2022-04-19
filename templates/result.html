@@ -1,18 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>results</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Cyber Clinic </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/styles/style.css" rel="stylesheet">
+
 </head>
+
 <body>
-    <h1>PREDICTION :</h1> <br>
-    {%if data== 1%} 
-    <h2>you might have diabetes , you better go check a doctor</h2>
-    {%endif%}
-    {%if data == 0%}
-    <h2>you dont have diabetes , congrats !</h2>
-    {%endif%}
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@cyber.clinic.com</a>
+        <i class="bi bi-phone"></i> 23 280 514
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="/">Cyber Clinic</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="/">Home</a></li>
+         
+          <li><a class="nav-link scrollto" href="/#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="/#departments">Departments</a></li>
+          
+          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Departments Section ======= -->
+    <section id="departmentss" class="departments">
+      <div class="container">
+
+        <div class="section-title"><br><br><br>
+          <h2>Test Results</h2>
+          <p></p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Result</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Disease description</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Tips</a>
+              </li>
+            <!--  <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Pediatrics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Eye Care</a>
+              </li> -->
+            </ul>
+          </div>
+          <div class="col-lg-9">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Result</h3>
+                    {%if sick==0 %}
+                    {%if data==0 %}
+                    <p class="fst-italic">
+                      <b>Congrats ! our system predicted that you are in good Health</b> .
+                    </p>
+                    <p>However , you can still read our tips and advices. And if you have any inqueries we suggest that you visit a doctor</p>
+                    {%endif%} 
+                    {%if data==1 %}
+                    <p class="fst-italic">
+                       <b> Sorry ... there is a high chance that you have Diabetes </b>
+                    </p>
+                    <p>We strongly recommend you to check a doctor to verify your status. within the next tabs you can read a short discription about the diabetes disease and the tips we offer you to keep you in a good health condition</p>
+                    {%endif%} 
+                    {%endif%} 
+                    {%if sick==1 %}
+                    {%if data==0 %}
+                    <p class="fst-italic">
+                        <b>Congrats ! our system predicted that you are in good Health</b> .
+                    </p>
+                    <p>However , you can still read our tips and advices. And if you have any inqueries we suggest that you visit a doctor</p>
+                    {%endif%} 
+                    {%if data==1 %}
+                    <p class="fst-italic">
+                       <b> Sorry ... there is a high chance that you are infected with Corona virus</b>
+                    </p>
+                    <p>We strongly recommend you to keep away from your family and friends and to contact a doctor to verify your status. within the next tabs you can read a short discription about the corona virus and the tips we offer you to keep you in a good health condition</p>
+                    {%endif%} 
+                    {%endif%} 
+                    {%if sick==2 %}
+                    {%if data==0 %}
+                    <p class="fst-italic">
+                        <b>Congrats ! our system predicted that you are in good Health</b> .
+                    </p>
+                    <p>However , you can still read our tips and advices. And if you have any inqueries we suggest that you visit a doctor</p>
+                    {%endif%} 
+                    {%if data==1 %}
+                    <p class="fst-italic">
+                       <b> Sorry ... there is a high chance that you have some heart diseases</b>
+                    </p>
+                    <p>We strongly recommend you to check a doctor to verify your health status, otherwise within the next tab you can find some helpfull tips you can follow</p>
+                    {%endif%} 
+                    {%endif%} 
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="static/img/departments-1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    {%if sick==0 %}
+                    <h3>Diabetes</h3>
+                   <!-- <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>-->
+                    <p>Diabetes mellitus, commonly known as diabetes, is a metabolic disease that causes high blood sugar. The hormone insulin moves sugar from the blood into your cells to be stored or used for energy. With diabetes, your body either doesn’t make enough insulin or can’t effectively use the insulin it does make.
+
+                      Untreated high blood sugar from diabetes can damage your nerves, eyes, kidneys, and other organs.<a href="">Read more</a></p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="static/img/diabetes2.png" alt="" class="img-fluid">
+                    {%endif%}
+                    {%if sick==1 %}
+                    <h3>Corona virus</h3>
+                    <p class="fst-italic">Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus.</p>
+                    <p>Most people infected with the virus will experience mild to moderate respiratory illness and recover without requiring special treatment. However, some will become seriously ill and require medical attention. Older people and those with underlying medical conditions like cardiovascular disease, diabetes, chronic respiratory disease, or cancer are more likely to develop serious illness.<a href=""> Read more</a></p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="static/img/covid2.jpg" alt="" class="img-fluid">
+                    {%endif%}
+                    {%if sick==2 %}
+                    <h3>Heart Disease</h3>
+                    <p>The term “heart disease” refers to several types of heart conditions. The most common type of heart disease is coronary artery disease (CAD), which affects the blood flow to the heart. Decreased blood flow can cause a heart attack. Sometimes heart disease may be “silent” and not diagnosed until a person experiences signs or symptoms of a heart attack, heart failure, or an arrhythmia..<a href=""> Read more</a></p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="static/img/heart3.jpg" alt="" class="img-fluid">
+                    {%endif%}
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    {%if sick==0%}
+                    <h3>Awesome tips for you !</h3>
+                  <!--  <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>-->
+                  <ul>
+                    <li><p>Get at least 150 minutes per week of aerobic exercise, such as walking or cycling.</p></li>
+                    <li><p>Cut saturated and trans fats, along with refined carbohydrates, out of your diet.</p></li>
+                    <li><p>Eat more fruits, vegetables, and whole grains.</p></li>
+                    <li><p>Eat smaller portions.</p></li>
+                    <li><p>Try to lose 7 percentTrusted Source of your body weight if you’re overweight or obese.</p></li>
+                  </ul>
+                    {%endif%}
+                    {%if sick==1%}
+                    <h3> Precautions to prevent infection</h3>
+                    <p class="fst-italic">To prevent the spread of COVID-19:</p>
+                    <ul>
+                    <li><p>Maintain a safe distance from others (at least 1 metre), even if they don’t appear to be sick.</p></li>
+                    <li><p>Wear a mask in public, especially indoors or when physical distancing is not possible.</p></li>
+                    <li><p>Get vaccinated when it’s your turn. Follow local guidance about vaccination.</p></li>
+                    <li><p>Stay home if you feel unwell.</p></li>
+                  </ul>
+                    {%endif%}
+                    {%if sick==2%}
+                    <h3> Choose Healthy Habits</h3>
+                    <p class="fst-italic">You can choose healthy habits to help prevent heart disease:</p>
+                    <ul>
+                   <li> <p>Choose healthy foods and drinks.</p></li>
+                   <li> <p>Keep a healthy weight.</p></li>
+                    <li><p>Do regular physical activities.</p></li>
+                    <li><p>Don't smoke and keep away from smokers.</p></li>
+                  </ul>
+                    {%endif%}
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="static/img/departments-3.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
+                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
+                    <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row gy-4">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
+                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
+                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="static/img/departments-5.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Departments Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="container d-md-flex py-4">
+
+            <div class="me-md-auto text-center text-md-start">
+              <div class="copyright">
+                &copy; Copyright <strong><span>Cyber Clinic</span></strong>. All Rights Reserved
+              </div>
+              <div class="credits">
+              </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+          
+
+        </div>
+      </div>
+    </div>
+
+   
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/vendor/purecounter/purecounter.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/js/main.js"></script>
+
 </body>
+
 </html>

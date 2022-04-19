@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Corona check form</title>
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/styles/style.css" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="static/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <style>
+      .labels{
+        color: grey;
+        font-size: small;
+        padding-left: 0.5rem;
+        padding-bottom: 00.5rem;
+      }
+    </style>
+  
+</head>
+
+<body>
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:cyberclinic@gmail.com">cyberclinic@gmail.com</a>
+        <i class="bi bi-phone"></i> +216 23 280 514
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="/">Cyber Clinic</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto" href="/">Home</a></li>
+        <li><a class="nav-link scrollto active" href="/#services">Diagnosis</a></li>
+        <li><a class="nav-link scrollto" href="/#departments">Blogs</a></li>
+        <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+ <!-- ======= Appointment Section ======= -->
+ <section id="check" class="appointment section-bg">
+  <div class="container">
+<br><br><br><br>
+    <div class="section-title">
+      <h2>Covid-19 check</h2>
+      <p>Fill in the fields under with the mandatory data ,It's important to answer the questions precisely to get more accurate result ,then click the Check Results button .</p>
+    </div>
+    <form action="{{url_for('prediction_covid')}}" method="post" role="form" class="php-email-form">
+        <div class="row">
+        <div class="col-md-4 form-group">
+          <label class="labels">Do you have Breathing problems ?</label>
+            <select name="BrProblem" id="BrProblem" class="form-select">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>            
+           <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+          <label class="labels">Do you have Feve ?</label>
+            <select name="Fever" id="Fever" class="form-select">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>              
+         <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+          <label class="labels">Do you have high Dry cough ?</label>
+          <select name="DryC" id="DryC" class="form-select">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>         
+         <div class="validate"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 form-group mt-3"> 
+          <label class="labels">Do you have Sore throat ?</label>
+          <select name="SoreT" id="SoreT" class="form-select">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3">
+          <label class="labels">Do you have Hyper tension ?</label>
+          <select name="HyperT" id="HyperT" class="form-select">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3">
+          <label class="labels">Have you travelled abroad recently ?</label>
+            <select name="AbroadT" id="AbroadT" class="form-select">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>          
+        <div class="validate"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 form-group mt-3"> 
+          <label class="labels">Had contact with Covid patient ?</label>
+          <select name="Contact" id="Contact" class="form-select">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3">
+          <label class="labels">Have you attended a large gathering ?</label>
+          <select name="LargeG" id="LargeG" class="form-select">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <div class="validate"></div>
+        </div>
+        <div class="col-md-4 form-group mt-3">
+          <label class="labels">Have you visited public exposed places ?</label>
+            <select name="PublicE" id="PublicE" class="form-select">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>          
+        <div class="validate"></div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+      </div>
+      <div class="text-center"><button type="submit">Check Results</button></div>
+    </form>
+
+  </div>
+</section><!-- End Appointment Section -->
+    
+</body>
+</html>
