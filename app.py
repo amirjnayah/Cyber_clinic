@@ -77,3 +77,5 @@ def prediction_heart():
     symptomes=[[age,stroke,wdiff,physHlth,diabetic,kidney,smoke,physAct,cancer]]
     pred=model_heart.predict(symptomes)
     return render_template('result.html',data=pred[0],sick=2)
+if __name__ == "__main__":
+    app.run(debug=True)
